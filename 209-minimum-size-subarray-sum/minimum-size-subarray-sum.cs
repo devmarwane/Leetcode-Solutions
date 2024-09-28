@@ -7,13 +7,7 @@ public class Solution {
         int sum=0;
 
         while(r<nums.Length)
-        {
-            if (nums[r]>=target)
-            {
-                return 1;
-            }
-        
-
+        {       
 
             sum+=nums[r];
 
@@ -22,9 +16,6 @@ public class Solution {
                 sum=sum-nums[l];
                 l++;
             }
-            
-            Console.WriteLine($"l={l} - r={r} -curr={nums[r]} - sum={sum} - min={minSubArray}");
-
             r++;
         }
 
