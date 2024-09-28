@@ -2,23 +2,26 @@ public class Solution {
     public bool ContainsNearbyDuplicate(int[] nums, int k) {
         if (k==0)
             return false;
-            
-        Queue<int> numbers = new Queue<int>();
 
-        for(int i=0;i<nums.Length;i++) {
-            if (numbers.Contains(nums[i])){
+
+        HashSet<int> window = new HashSet<int>();
+        int l=0;
+
+        for(int r=0;r<nums.Length;r++){
+            if(r-l>k) {
+                window.Remove(nums[l]);
+                l++;
+            }
+
+            if(window.Contains(nums[r]))
+            {
                 return true;
             }
-            AddToQueue(numbers, nums[i],k);
+    
+            window.Add(nums[r]);
 
         }
         return false;
     }
 
-    private void AddToQueue(Queue<int> q,int num, int maxItems) {
-        if (q.Count==maxItems){
-            q.Dequeue();
-        }
-        q.Enqueue(num);
-    }
 }
