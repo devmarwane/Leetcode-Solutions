@@ -1,5 +1,3 @@
-using System.Text.RegularExpressions;
-
 public class Solution {
     public bool IsPalindrome(string s) {
        
