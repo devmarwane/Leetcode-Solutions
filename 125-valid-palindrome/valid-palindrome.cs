@@ -1,7 +1,6 @@
 public class Solution {
     public bool IsPalindrome(string s) {
-       
-  
+
         if (string.IsNullOrWhiteSpace(s))
             return true;
 
