@@ -1,29 +1,37 @@
 public class MyStack {
 
-    Queue<int> queue = new Queue<int>();
+    Queue<int> q1 = new Queue<int>();
+    Queue<int> q2 = new Queue<int>();
 
     public MyStack() {
-        queue = new Queue<int>();
+        q1 = new Queue<int>();
+        q2 = new Queue<int>();
     }
     
     public void Push(int x) {
-        queue.Enqueue(x);
+        q2.Enqueue(x);
 
-        for(int i=0;i<queue.Count-1;i++){
-            queue.Enqueue(queue.Dequeue());
+        while (q1.Count > 0)
+        {
+            q2.Enqueue(q1.Dequeue());
         }
+
+        // Swap the names of the queues
+        Queue<int> tmp = q1;
+        q1 = q2;
+        q2 = tmp;
     }
     
     public int Pop() {
-        return queue.Dequeue();
+        return q1.Dequeue();
     }
     
     public int Top() {
-        return queue.Peek();
+        return q1.Peek();
     }
     
     public bool Empty() {
-        return queue.Count == 0;
+        return q1.Count == 0;
     }
 }
 
