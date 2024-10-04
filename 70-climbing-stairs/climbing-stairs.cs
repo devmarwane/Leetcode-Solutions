@@ -1,7 +1,7 @@
 public class Solution {
     public int ClimbStairs(int n)
     {
-        if (n == 0 || n == 1)
+        if (n == 1 )
             return 1;
 
         Dictionary<int, int> map  = new Dictionary<int, int>();
@@ -11,7 +11,7 @@ public class Solution {
 
     private int ClimbStairsHelper(int n, Dictionary<int, int> map)
     {
-        if (n == 0 || n == 1)
+        if (n == 1 || n==0)
             return 1;
 
         if (map.ContainsKey(n))
