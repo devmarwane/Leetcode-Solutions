@@ -70,8 +70,8 @@ public class Solution {
         return i;
     }
 
-     // Find the median of the first, middle, and last elements of the array
-    private static int MedianOfThree(int[] arr, int low, int high)
+    // Find the median of the first, middle, and last elements of the array
+    private int MedianOfThree(int[] arr, int low, int high)
     {
         int mid = (low + high) / 2;
 
@@ -94,7 +94,7 @@ public class Solution {
     }
 
      // Swap elements at two positions in the array
-    private static void Swap(int[] arr, int i, int j)
+    private void Swap(int[] arr, int i, int j)
     {
         int temp = arr[i];
         arr[i] = arr[j];
