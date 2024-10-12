@@ -6,7 +6,12 @@ public class Solution {
 
         for (int i = 0; i < strs.Length; i++)
         {
-            string key = new String(strs[i].ToCharArray().OrderBy(x => x).ToArray());
+            char[] hash = new char[26];
+            foreach (char c in strs[i]) {
+                hash[c - 'a']++;
+            }
+            string key = new string(hash);
+
             if (groups.ContainsKey(key))
                 groups[key].Add(strs[i]);
             else
