@@ -17,11 +17,11 @@ public class Solution {
         {
             return root;
         }
-        if(root.left != null &&  root.val > val)
+        if(root.val > val && root.left != null)
         {
             return SearchBST(root.left, val);
         }
-        else if (root.right != null && root.val < val)
+        else if (root.val < val && root.right != null)
         {
             return SearchBST(root.right, val);
         }
