@@ -2,7 +2,7 @@ public class Solution {
     public IList<IList<string>> GroupAnagrams(string[] strs)
     {
 
-        Dictionary<string, List<string>> groups = new Dictionary<string, List<string>>();
+        Dictionary<string, IList<string>> groups = new Dictionary<string, IList<string>>();
 
         for (int i = 0; i < strs.Length; i++)
         {
@@ -12,7 +12,6 @@ public class Solution {
             else
                 groups.Add(key, new List<string> { strs[i] });
         }
-
-        return new List<IList<string>>(groups.Values.Select(x => x).ToList());
+        return groups.Values.Select(x => x).ToList();
     }
 }
