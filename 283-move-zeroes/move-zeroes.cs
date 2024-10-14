@@ -4,13 +4,12 @@ public class Solution {
         int filled=0;
         for(int i=0;i<nums.Length;i++){
             if(nums[i] != 0){
-                nums[filled++] = nums[i];
+                if(i!=filled){
+                    nums[filled] = nums[i];
+                    nums[i]=0;
+                }
+                filled++;
             }
-        }
-        for(int i=filled;i<nums.Length;i++){
-            nums[i]=0;
-        }
-        
-            
+        }          
     }
 }
